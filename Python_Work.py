@@ -49,3 +49,57 @@ def count_consonants():
 #Call vowel counter and consonant counter functions
 count_vowels()
 count_consonants()
+
+# countng number of ducks in a string where 'duck'=1 and 'ducks'=2
+def ducks():
+    num=0
+    string= input("Enter the sentence to count the amount of ducks: ")
+    words= string.lower().split()
+   
+    
+    for ducks in words:
+        
+        if ducks.strip("!,.")== "duck":
+            num+=1
+            
+        elif ducks.strip("!,.") == "ducks":
+            num+=2
+        
+    print(f"There are {num} ducks in this sentence.")
+   
+    return num
+#call duck function
+ducks()
+
+#function to check if a string is a palindrome
+def palindrome():
+    
+    string= input("Enter the sentence/word to check if it's a palindrome: ")
+    string= string.lower().replace(" " ,"")
+    if string== string[::-1]:
+        print("This is a palindrome")
+    else:
+        print("This is not a palindrome")
+#call function
+palindrome()
+
+#collatz conjecture
+
+def collatz():
+
+    n= input("Enter the starting number to execute the collatz conjecture:")
+    
+    if n==1:
+        print(n)
+        return [n]
+        
+    if n%2==0:
+        
+        print(n)
+        return [n]+ collatz(n//2) 
+    else:
+        print(n)
+        return [n]+collatz(n*3+1)
+
+collatz()
+
