@@ -1,6 +1,32 @@
 
+#Binary search function to sort a list and find a number in that list quicker.
+def binary_search():
+    print("Binary search function.")
+
+    numbers= input("Enter a list of numbers:")
+    numbers = list(map(int, numbers.replace(",", " ").split()))
+    numbers.sort()
+    target= int(input("input the number you want to search for: "))
+    left =0
+    right= len(numbers)-1
+    
+
+    while left<=right:
+        mid= (left+right)//2
+        if numbers[mid]== target:
+            print(f"It's in position {mid}")
+            return mid
+        elif target<numbers[mid]:
+            right= mid-1
+        elif target>numbers[mid]:
+            left= mid+1
+    print("There's no {target} in the list")
+binary_search()
+
+
 #Financial Compound interest calculator function
 def compound_interest():
+    print("Compund interest calculator")
     starting_balance= float(input("Please enter your initial investment: "))
     interest_rate= float(input("Please enter your interest rate: "))
     contribution= float(input("Enter your monthly contributions: "))
@@ -20,6 +46,7 @@ compound_interest()
 
 #Vowel counting in a string function 
 def count_vowels():
+    print("Vowel counter.")
     sentence= input("Enter a sentence/word and I will count the vowels: ")
     
     list= "aeiouAEIOU"
@@ -34,6 +61,7 @@ def count_vowels():
 
 
 def count_consonants():
+    print("consonant counter.")
     sentence= input("Enter a sentence/word and I will count the consonants: ")
 
     list= "aeiouAEIOU"
@@ -52,6 +80,7 @@ count_consonants()
 
 # countng number of ducks in a string where 'duck'=1 and 'ducks'=2
 def ducks():
+    print("duck counter")
     num=0
     string= input("Enter the sentence to count the amount of ducks: ")
     words= string.lower().split()
@@ -73,6 +102,7 @@ ducks()
 
 #function to check if a string is a palindrome
 def palindrome():
+    print("Palindrome checker counter")
     
     string= input("Enter the sentence/word to check if it's a palindrome: ")
     string= string.lower().replace(" " ,"")
@@ -86,6 +116,7 @@ palindrome()
 #collatz conjecture
 
 def collatz():
+    print("Collatz conjecture step through")
 
     n= input("Enter the starting number to execute the collatz conjecture:")
     
@@ -107,6 +138,7 @@ collatz()
 import math
 
 def parse_binary():
+    print("Binary to base 10 converter")
     
     binary=input("Enter the binary number: ")
     int_result = 0
@@ -120,9 +152,12 @@ parse_binary()
 
 #sorting sublists within a list e.g list= [["Fen", 3], ["Bart", 5], ["Oscar", 4], ["Homer", 2]]
 def sort_people():
+    print("Sublist with different data types sorting")
+    
     people= input("Enter your list to be sorted")
     people.sort(key=lambda person:person[1])
     print(people)
     return people
 
 sort_people()
+
