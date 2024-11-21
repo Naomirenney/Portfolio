@@ -103,3 +103,26 @@ def collatz():
 
 collatz()
 
+#binary to base 10
+import math
+
+def parse_binary():
+    
+    binary=input("Enter the binary number: ")
+    int_result = 0
+    for r in range(len(binary)):
+        if binary[r] == "1":
+            int_result += 2**(len(binary) - r -1)
+    print(f"The base 10 number is: {int_result}")
+    return int_result
+parse_binary()
+
+
+#sorting sublists within a list e.g list= [["Fen", 3], ["Bart", 5], ["Oscar", 4], ["Homer", 2]]
+def sort_people():
+    people= input("Enter your list to be sorted")
+    people.sort(key=lambda person:person[1])
+    print(people)
+    return people
+
+sort_people()
